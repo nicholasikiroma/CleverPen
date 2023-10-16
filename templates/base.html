@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>CleverPen - AI Writer</title>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('index') }}"><img src="../static/assets/logo2.png" alt=""></a>
+        <nav>
+            
+            {% if current_user.is_authenticated %}
+           
+            <div class="nav">
+                <a href="{{ url_for('index') }}">Blog</a>
+                <a href="{{ url_for('writer') }}">Write</a>
+                <a href="{{ url_for('log_out') }}">Log out</a>
+            </div>
+            {% else %}
+            <div class="nav">
+                <a href="{{ url_for('index') }}">Blog</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('sign_up') }}">Signup</a>
+                <a href="{{ url_for('writer') }}">Write</a>
+            </div>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>CleverPen</h3>
+            <p>CleverPen is a blog website where you will find amazing content made from humans and AI. Here
+                each
+                tutorial is beautifully described step by step with the required source code.</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; <a href="#">CleverPen</a> </p>
+            <div class="footer-menu">
+                <ul class="f-menu">
+                    <li><a href="url_for({{'index'}})">Home</a></li>
+                    <li><a href="url_for{{'login'}}">Login</a></li>
+                    <li><a href="url_for{{'writer'}}">Write</a></li>
+                    <li><a href="url_for{{'index'}}">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

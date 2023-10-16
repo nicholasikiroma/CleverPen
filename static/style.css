@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@700&display=swap');
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+  }
+
+header {
+  height: fit-content;
+  display: flex;
+  background-color: black;
+  margin-bottom: 4%;
+}
+
+  .container {
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+nav {
+    margin: 0 auto;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    padding: 10px;
+    font-size: large;
+    font-weight: 700;
+  }
+  
+  
+  .form {
+    background-color: white;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    border: 0px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+
+.input-box{
+  display: flex;
+  justify-content: center;
+}
+
+input{
+  width: 100%;
+  padding: 4px 0;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  background: transparent;
+}
+
+button{
+  width: 100%;
+  background-color: black;
+  padding: 9px;
+  color: #fff;
+  font-size: large;
+  border: none;
+  border-radius: 8px;
+}
+
+.post{
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+
+}
+
+footer{
+  margin-top: 100px;
+  background: #111;
+  height: auto;
+  width: 100vw;
+
+  padding-top: 40px;
+  color: #fff;
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+.socials li{
+  margin: 0 10px;
+}
+.socials a{
+  text-decoration: none;
+  color: #fff;
+  border: 1.1px solid white;
+  padding: 5px;
+
+  border-radius: 50%;
+
+}
+.socials a i{
+  font-size: 1.1rem;
+  width: 20px;
+
+
+  transition: color .4s ease;
+
+}
+.socials a:hover i{
+  color: aqua;
+}
+
+.footer-bottom{
+  background: #000;
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+.footer-bottom p{
+float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom p a{
+color:#44bae8;
+font-size: 16px;
+text-decoration: none;
+}
+.footer-bottom span{
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+.footer-menu{
+float: right;
+
+}
+.footer-menu ul{
+display: flex;
+}
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+.footer-menu ul li a{
+color: #cfd2d6;
+text-decoration: none;
+}
+.footer-menu ul li a:hover{
+color: #27bcda;
+}
+
+@media (max-width:500px) {
+.footer-menu ul{
+display: flex;
+margin-top: 10px;
+margin-bottom: 20px;
+}
+}
+
+ /* Style the form - display items horizontally */
+ .input-form {
+  display: flex;
+/* flex-flow: row wrap; */
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Add some margins for each label */
+.input-form label {
+  margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+.input-form input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+.input-form button {
+  padding: 10px 20px;
+  background-color: black;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.input-form button:hover {
+  background-color: grey;
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .input-form input {
+    margin: 10px 0;
+  }
+
+  .input-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.content-box{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 0px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.input-box > form:nth-child(1){
+width: 100%;
+padding: 30px;
+}
+
+#response-text{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+
+
+h1 span.typed-text {
+  font-family: 'Roboto Mono', monospace;;
+  font-weight: normal;
+  color: chocolate;
+}
+h1 span.cursor {
+  background-color: #ccc;
+  animation: blink 1s infinite;
+}
+
+h1 span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+.date{
+  color: chocolate;
+  font-weight: 700;
+}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Create content</h1>
+
+<form class="input-form" id="input-form" autocomplete="off" action="{{url_for('generate_text')}}" method="POST">
+    <label for="input-text">Prompt:</label>
+    <input type="text" id="input-text" placeholder="Enter prompt" name="input-text">
+
+    <button type="submit">Submit</button>
+</form>
+
+<div class="content-box">
+    {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+    <p class="message">{{message}}</p>
+    {% endfor %}
+    {% endwith %}
+
+    <div class="input-box">
+        <form action="{{ url_for('writer') }}" method="POST" id="response-form">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                <p>{{form.title.label}}</p>
+                <p>
+                    {{ form.title(class='form-control', placeholder='Title of your article') }}
+                </p>
+
+                {% if error in form.title.errors %}
+                    {% for error in form.title.errors %}
+                        <small class="error">{{ error }}</small>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <p>{{form.summary.label}}</p>
+                <p>
+                    {{form.summary(class='form-control',
+                    placeholder='Brief description of your article ')}}
+                </p>
+
+                {% if error in form.summary.errors %}
+                    {% for error in form.summary.errors %}
+                        <small class="error">{{ error }}</small>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+
+            <div class="form-group">
+                <p>{{form.content.label}}</p>
+                <p>
+                    {{form.content(class='form-control', id='response-text', rows='35', cols='50')}}
+                </p>
+
+                {% if error in form.content.errors %}
+                    {% for error in form.content.errors %}
+                        <small class="error">{{ error }}</small>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <button class='btn' type="submit">Save and Publish</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+{{ ckeditor.load() }}
+{{ ckeditor.config(name='content') }}
+{% endblock content %}
