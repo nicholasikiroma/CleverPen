@@ -14,6 +14,9 @@ from flask_login import (
 from flask_ckeditor import CKEditor
 import openai
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 base_dir = os.path.dirname(os.path.realpath(__file__))

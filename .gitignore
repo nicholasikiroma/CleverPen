@@ -1,8 +1,5 @@
 # created by virtualenv automatically
 __pycache__/
+venv
+.env
 .vscode
-bin
-include
-lib
-cleverpen.db
-pyvenv.cfg
